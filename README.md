@@ -1,3 +1,5 @@
+![Screenshot](https://raw.githubusercontent.com/kontrollanten/bash-quotes/master/read-quote.png)
+
 # bash-quotes
 
 Shows inspiring quotes from [http://quotes.cat-v.org/](http://quotes.cat-v.org/) upon shell login or just when running `read-quote` in CLI.
