@@ -34,7 +34,7 @@ func main() {
 	f := LinesInFile(filePath)
 
 	rand.Seed(time.Now().UnixNano())
-	rnd := rand.Intn(len(f) + 1)
+	rnd := rand.Intn(len(f))
 
 	red := color.New(color.FgBlack)
 	whiteBackground := red.Add(color.BgCyan)
