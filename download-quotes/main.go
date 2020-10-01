@@ -2,9 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/gocolly/colly/v2"
 	"os"
-	"strings"
 )
 
 type Quote struct {
@@ -13,41 +11,16 @@ type Quote struct {
 }
 
 func main() {
-	targetPath := os.Args[1]
-
-	c := colly.NewCollector(
-		colly.AllowedDomains("quotes.cat-v.org"),
-	)
-
-	c.OnHTML("article", func(e *colly.HTMLElement) {
-		quotes := []Quote{}
-		q := Quote{}
-
-		e.ForEach("*", func(i int, c *colly.HTMLElement) {
-			if c.Name == "hr" && q.Text != "" {
-				quotes = append(quotes, q)
-				q = Quote{}
-				return
-			}
-
-			if q.Text == "" {
-				q.Text = strings.ReplaceAll(strings.TrimSpace(c.Text), "\n", " ")
-				return
-			}
-
-			q.Author = strings.TrimSpace(strings.TrimSuffix(c.Text, "\n"))
-		})
-
-		writeToFile(quotes, targetPath)
-	})
-
-	c.Visit("http://quotes.cat-v.org/")
+	DownloadCatV()
+	DownloadAurelius()
 }
 
-func writeToFile(quotes []Quote, targetPath string) {
+func WriteToFile(quotes []Quote, filename string) {
+	targetPath := os.Args[1]
+
 	fmt.Println("targetPath:")
 	fmt.Println(targetPath)
-	f, e := os.Create(fmt.Sprintf("%s/%s", targetPath, "quotes.txt"))
+	f, e := os.Create(fmt.Sprintf("%s/%s", targetPath, filename))
 
 	if e != nil {
 		panic(e)

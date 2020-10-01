@@ -1,8 +1,8 @@
 ![Screenshot](https://raw.githubusercontent.com/kontrollanten/bash-quotes/master/read-quote.png)
 
-# bash-quotes
+# shell-quotes
 
-Shows inspiring quotes from [http://quotes.cat-v.org/](http://quotes.cat-v.org/) upon shell login or just when running `read-quote` in CLI.
+Shows inspiring quotes from [http://quotes.cat-v.org/](http://quotes.cat-v.org/) or [Marcus Aurelius](https://en.wikipedia.org/wiki/Marcus_Aurelius) upon shell login or just when running `read-quote` in CLI.
 
 ## Installation
 
