@@ -1,3 +1,7 @@
+deps:
+	@echo "Downloading dependencies..."
+	go mod download
+
 install:
 	@echo "Installing shell-quotes\n"
 	mkdir -p "${HOME}/.config/shell-quotes"
