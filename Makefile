@@ -22,8 +22,8 @@ fi\n\
 "
 
 build:
-	go build -i -ldflags="-s -w" -o bin/download-quotes ./download-quotes
-	go build -i -ldflags="-s -w" -o bin/read-quote ./read-quote
+	go build -ldflags="-s -w" -o bin/download-quotes ./download-quotes
+	go build -ldflags="-s -w" -o bin/read-quote ./read-quote
 
 clean:
 	rm -rf bin/*
